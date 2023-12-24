@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景影片+遮罩+文字應用2024</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .full {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slogan {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            font-size: 24px;
+            text-shadow: 0.1em 0.1em 0.2em black;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .video_inside {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full">
+        <div class="slogan">
+            <h1>Merry X'mas</h1>
+        </div>
+        <div class="mask"></div>
+        <div class="video">
+            <video autoplay muted loop class="video_inside">
+                <source src="./assets/video/xmas.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+
+</html>
