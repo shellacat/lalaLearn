@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>google map+Youtube引入練習</title>
+    <title>Contact Us</title>
     <style>
         *,
         *::before,
@@ -13,31 +13,68 @@
             margin: 0;
             box-sizing: border-box;
         }
+
+        .container {
+            max-width: 800px;
+            height: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .slogan {
+            margin-bottom: 15px;
+        }
+
+        .form-wrap {
+            margin-bottom: 15px;
+        }
+
+        .form-wrap input {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            box-shadow: 0 0 2px 1px #3697c9 inset;
+            font-size: 1.3rem;
+        }
+
+        .form-wrap button {
+            padding: 10px 15px;
+            background: #149eb1;
+            border: 0;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            color: #fff;
+            font-weight: 600;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <h1 class="slogan">Contact Us</h1>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29128.671921781548!2d120.67749419999998!3d24.133688350000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2stw!4v1703392516196!5m2!1szh-TW!2stw"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BTXlGIfIJ7A?si=IPnmEdOBxl3oG4in"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1287.1642171744365!2d120.68428615929635!3d24.148920192012103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d68fe76583d%3A0x4ae16754ccc83ff5!2z6L6y5qWt6YOo6L6y55Sw5rC05Yip572y6Ie65Lit566h55CG6JmV5bCK6LOi5aSn5qiTICjmsLTliKnlpKfmqJMp!5e0!3m2!1szh-TW!2stw!4v1703391022178!5m2!1szh-TW!2stw"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    <div class="form_wrap">
-        <input type="text" placeholder="請輸入名稱">
-    </div>
-    <div class="form_wrap">
-        <input type="text" placeholder="請輸入電話">
-    </div>
-    <div class="form_wrap">
-        <input type="text" placeholder="請輸入信箱">
-    </div>
-    <div class="form_wrap" style="text-align: right">
-        <button>送出</button>
-    </div>
 
-
+        <div class="form-wrap">
+            <input type="text" placeholder="請輸入名稱">
+        </div>
+        <div class="form-wrap">
+            <input type="text" placeholder="請輸入電話">
+        </div>
+        <div class="form-wrap">
+            <input type="text" placeholder="請輸入信箱">
+        </div>
+        <div class="form-wrap" style="text-align: right;">
+            <button>送出</button>
+        </div>
+    </div>
 </body>
 
 </html>
