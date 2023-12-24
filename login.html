@@ -105,7 +105,8 @@
         </div>
         <div class="register-wrap">
             <h1 class="slogan">會員註冊</h1>
-            <form>
+            <!-- 讓file可以上傳二進制資料,get只能傳送純文字,POST可以傳送二進制資料 -->
+            <form action="https://book.niceinfos.com/api/form/" enctype="multipart/form-data" method="POST">
                 <div class="form-item">
                     <label class="form-label" for="register-account">帳號</label>
                     <input class="form-input" type="text" id="register-account" name="account" value=""
@@ -116,6 +117,53 @@
                     <input class="form-input" type="password" id="register-secret" name="secret" value=""
                         placeholder="請輸入密碼">
                 </div>
+                <div class="form-item">
+                    <label for="">性別</label>
+                    <div>
+                        <input type="radio" name="gender" id="m-gender" value="M"><label for="m-gender">男</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" id="f-gender" value="F"><label for="f-gender">女</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="">興趣</label>
+                    <!-- 若選項非單一,name要用陣列去包,不然會有複寫的問題,後端只會吃到最後一個值 -->
+                    <div>
+                        <input type="checkbox" name="fav[]" id="fav-f5"><label for="fav-f1">追劇</label>
+                        <input type="checkbox" name="fav[]" id="fav-f2"><label for="fav-f2">旅遊</label>
+                        <input type="checkbox" name="fav[]" id="fav-f3"><label for="fav-f3">電影</label>
+                        <input type="checkbox" name="fav[]" id="fav-f4"><label for="fav-f4">動畫</label>
+                        <input type="checkbox" name="fav[]" id="fav-f5"><label for="fav-f5">睡覺</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="register-county">縣市</label>
+                    <select name="county" id="register-county">
+                        <option value="">選擇縣市</option>
+                        <option value="tp">台北</option>
+                        <option value="台中">台中</option>
+                        <option>高雄</option>
+                        <option value="">高雄2</option>
+                    </select>
+                </div>
+                <style>
+                    #register-remark {
+                        height: 200px;
+                        padding: 10px;
+                        resize: none;
+                    }
+                </style>
+                <div class="form-item">
+                    <label for="register-remark" class="form-label">有甚麼想法嗎?</label>
+                    <textarea name="remark" id="register-remark" placeholder="請輸入想法"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <label for="register-pic">個人照</label>
+                    <input type="file" id="register-pic" name="pic" accept="image/*">
+                </div>
+
                 <div class="form-fn">
                     <label for="tab-switch" class="form-btn">登入</label>
                     <button class="form-btn">註冊</button>
