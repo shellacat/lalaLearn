@@ -1,0 +1,241 @@
+html,
+body {
+    background-color: #f1f2ef;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 0;
+    background-color: #f4f4f5;
+    color: #333;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn.link {
+    color: #1877f2;
+    font-weight: 800;
+}
+
+.header {
+    height: 60px;
+    background: #fff;
+    /* border-bottom: 1px solid #7c7c7c; */
+    font-size: 0.9rem;
+}
+
+.header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+
+.header .logo {
+    position: relative;
+}
+
+.header .logo::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 8px;
+    width: 1px;
+    height: 25px;
+    background: rgb(199, 199, 199);
+}
+
+.header .logo img {
+    height: 30px;
+    margin: 5px;
+}
+
+.header .wrap .left-side {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header .wrap .left-side .menu ul {
+    display: flex;
+    gap: 15px;
+}
+
+.header .wrap .right-side ul {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.main {
+    min-height: 100vh;
+    /* height: 100vh; //文字過多導致破版 */
+    padding: 15px;
+}
+
+.banner {
+    height: 600px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.banner .cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.banner .cover .image {
+    background-image: url(../images/bn.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+.banner .cover:hover .image {
+    transform: scale(1.2);
+}
+
+.banner .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #022c1f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    z-index: 3;
+    border-radius: 0 0 5px 5px ;
+}
+
+
+.banner .bottom-bar .left-side {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.banner .bottom-bar .left-side .float-slogan {
+    position: absolute;
+    padding: 5px 8px;
+    background: #022c1f;
+    top: -18px;
+    border-radius: 4px;
+}
+
+.banner .bottom-bar .right-side {
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+    align-items: center;
+}
+
+.banner .current-process {
+    font-size: 1.5rem;
+}
+
+.other-project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    font-size: 0.8rem;
+}
+
+.other-project .item {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #ebebeb;
+    border-radius: 4px;
+}
+
+.other-project h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.other-project .cover {
+    width: 40%;
+    background-image: url(../images/product.webp);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.other-project .item:nth-child(2) .cover {
+    background-image: url(../images/op-2.webp);
+}
+
+.other-project .item:nth-child(3) .cover {
+    background-image: url(../images/op-3.webp);
+}
+
+.other-project .item:nth-child(4) .cover {
+    background-image: url(../images/op-4.webp);
+}
+
+.other-project .text {
+    width: 60%;
+    padding: 10px;
+}
+
+.other-project .process {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer {
+    background: #f9fafb;
+    border-top: 1px solid #dbdbdb;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer .wrap {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer .footer-logo {
+    max-width: 100px;
+}
+
+.footer h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.footer .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.footer .icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    fill: #7c7c7c;
+}
