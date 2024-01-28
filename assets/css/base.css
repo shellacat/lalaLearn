@@ -1,0 +1,38 @@
+html,body {
+    font-size: 40px;
+}
+
+.cube{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    color: black;
+    margin-left: 15px;
+}
+
+.cube_wrap{
+    display: flex;
+    gap: 10px;
+}
+
+.f-100 {
+    font-size: 50px;
+}
+
+.fp-100 {
+    font-size: 200%;
+    color: red;
+}
+
+.frem-100 {
+    font-size: 2rem;
+    color: blue;
+}
+
+.fem-100 {
+    /* 等同 200% */
+    font-size: 2em;
+}

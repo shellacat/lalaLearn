@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position demo</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .block-1 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        .block-1 .item {
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            position: relative;
+            z-index: 99990;
+        }
+
+        .block-2 {
+            position: absolute;
+            z-index: 3;
+        }
+
+        .block-2 .item {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block-1">
+        <div class="item">block-1 item</div>
+    </div>
+    <div class="block-2">
+        <div class="item">block-2 item</div>
+    </div>
+</body>
+
+</html>

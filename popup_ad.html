@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup AD</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .ad-popup {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+
+        .ad-popup.active {
+            display: block;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0000005b;
+        }
+
+        .ad-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ad-container {
+            padding: 20px;
+            background: #fff;
+            min-width: 300px;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .ad-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            background: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn{
+            width: 80px;
+            height: 30px;
+            color: #fff;
+            background-color: aqua;
+            outline: none;
+            position: absolute;
+            bottom: 10px;
+            left: 100px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Good Content</h1>
+    <button id="open-btn">Open AD</button>
+    <div class="ad-popup" id="ad-app">
+        <div class="ad-wrap">
+            <div class="ad-container">
+                <div class="ad-close" id="ad-close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span></div>
+                <div class="ad-content">
+                    <h2>恭喜您獲得 iPhone 99</h2>
+                    <button class="btn">立即申請</button>
+                </div>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+
+<script>
+    let app = document.querySelector('#ad-app');
+    let btn = document.querySelector('#open-btn');
+    let close = document.querySelector('#ad-close')
+
+    btn.addEventListener('click', () => {
+        app.classList.add('active');
+    })
+
+    close.addEventListener('click', () => {
+        app.classList.remove('active');
+    })
+</script>
+
+</html>

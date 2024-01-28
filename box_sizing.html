@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        .block-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width: 210px;
+            height: 310px;
+            background: #dedede;
+            gap: 10px;
+        }
+
+        .wrap-item {
+            width: 100px;
+            height: 150px;
+            background: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block-wrap">
+        <div class="wrap-item">ITEM 1</div>
+        <div class="wrap-item">ITEM 2</div>
+    </div>
+</body>
+
+</html>
