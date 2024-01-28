@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .video-player {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-slogan {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+        }
+
+        .responsive-video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00000077;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-player">
+        <h1 class="video-slogan">Hello World</h1>
+        <div class="video-mask"></div>
+        <div class="background-video">
+            <video class="responsive-video" autoplay loop muted>
+                <source src="assets/videos/sample-5s.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+
+</html>

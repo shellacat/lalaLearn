@@ -1,0 +1,80 @@
+.slogan {
+    margin: 20px auto;
+}
+
+.demo {
+    margin: 20px 0;
+    border: 2px dashed #8f8f8f;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px
+}
+
+.product-list .item {
+    background: #ff822f;
+    color: #fff;
+    padding: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.product-list .item .cover {
+    height: 200px;
+    background-color: rgb(97, 97, 97);
+    margin-bottom: 15px;
+    background-image: url(../images/119.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-list .cover .off{
+    background-color: #fff;
+    color: #ff822f;
+    width: 100%;
+    position: absolute;
+    right: -100px;
+    top: 20px;
+    transform: rotate(45deg);
+    text-align: center;
+    box-shadow: 5px 3px 10px rgb(231, 99, 22);
+}
+
+.product-list .item .name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-list .item .content {
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.product-list .item .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-list .item .buy-now {
+    padding: 10px 20px;
+    border: 0;
+    background: rgb(109, 12, 12);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-list .item .buy-now:hover {
+    background: rgb(248, 135, 135);
+}
+

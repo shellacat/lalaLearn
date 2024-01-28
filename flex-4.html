@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex align-items</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .flex {
+            display: flex;
+            background: yellow;
+            width: 100%;
+            margin: 20px auto;
+            height: 300px;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .flex-item.red {
+            background: red;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex.fa-start {
+            align-items: flex-start;
+        }
+
+        .flex.fa-center {
+            align-items: center;
+        }
+
+        .flex.fa-end {
+            align-items: flex-end;
+        }
+
+        .flex.fa-baseline {
+            align-items: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green; height: unset;">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <div class="flex fa-start">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green; height: unset;">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <div class="flex fa-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green; height: unset;">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <div class="flex fa-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green; height: unset;">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <div class="flex fa-baseline">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green; height: unset;">
+                <div>
+                    <div>2-1</div>
+                    <div>2-2</div>
+                </div>
+            </div>
+            <div class="flex-item red">
+                <div>
+                    <div>3-1</div>
+                    <div>3-2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

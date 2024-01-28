@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex wrap demo</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .flex {
+            display: flex;
+            background: yellow;
+            width: 200px;
+            margin: 20px auto;
+            height: 200px;
+            /* min-height: 200px; */
+            gap: 10px;
+            flex-wrap: nowrap;
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+        }
+
+        .flex-item.red {
+            background: red;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+    </div>
+</body>
+
+</html>

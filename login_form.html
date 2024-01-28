@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .slogan {
+            text-align: center;
+            background: #0e66a1;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            gap: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 50px;
+            padding: 15px;
+            border: 0;
+            outline: 0;
+            box-shadow: 0 0 1px 1px #0c5da0 inset;
+            font-size: 1.4rem;
+        }
+
+        .form-btn {
+            background: red;
+            color: #fff;
+            border: 0;
+            padding: 10px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .form-fn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form-fn .form-btn {
+            padding: 10px 20px;
+        }
+
+        .form-fn label.form-btn {
+            background: #dedede;
+            color: #000
+        }
+
+        .register-wrap {
+            display: none;
+        }
+
+        #tab-switch {
+            display: none;
+        }
+
+        #tab-switch:checked~.register-wrap {
+            display: block;
+        }
+
+        #tab-switch:checked~.login-wrap {
+            display: none;
+        }
+
+        .form-label {
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="checkbox" id="tab-switch" checked>
+        <div class="login-wrap">
+            <h1 class="slogan">會員登入</h1>
+            <form>
+                <div class="form-item">
+                    <label class="form-label" for="login-account">帳號</label>
+                    <input class="form-input" type="text" id="login-account" name="account" value=""
+                        placeholder="請輸入帳號">
+                </div>
+                <div class="form-item">
+                    <label class="form-label" for="login-secret">密碼</label>
+                    <input class="form-input" type="password" id="login-secret" name="secret" value=""
+                        placeholder="請輸入密碼">
+                </div>
+                <button type="button" onclick="sayHi()">點我查看更多</button>
+                <div class="form-fn">
+                    <label for="tab-switch" class="form-btn">註冊</label>
+                    <button class="form-btn">登入</button>
+                </div>
+            </form>
+        </div>
+        <div class="register-wrap">
+            <h1 class="slogan">會員註冊</h1>
+            <form action="https://book.niceinfos.com/api/form/" enctype="multipart/form-data" method="POST">
+                <div class="form-item">
+                    <label class="form-label" for="register-account">帳號</label>
+                    <input class="form-input" type="text" id="register-account" name="account" value=""
+                        placeholder="請輸入帳號">
+                </div>
+                <div class="form-item">
+                    <label class="form-label" for="register-secret">密碼</label>
+                    <input class="form-input" type="password" id="register-secret" name="secret" value=""
+                        placeholder="請輸入密碼">
+                </div>
+                <div class="form-item">
+                    <label for="">性別</label>
+                    <div>
+                        <input type="radio" name="gender" id="m-gender" value="M"> <label for="m-gender">男</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gender" id="f-gender" value="F"> <label for="f-gender">女</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="">興趣</label>
+                    <div>
+                        <input type="checkbox" name="fav[]" id="fav-f1" value="f1"> <label for="fav-f1">F1</label>
+                        <input type="checkbox" name="fav[]" id="fav-f2" value="f2"> <label for="fav-f2">F2</label>
+                        <input type="checkbox" name="fav[]" id="fav-f3" value="f3"> <label for="fav-f3">F3</label>
+                        <input type="checkbox" name="fav[]" id="fav-f4" value="f4"> <label for="fav-f4">F4</label>
+                        <input type="checkbox" name="fav[]" id="fav-f5" value="f5"> <label for="fav-f5">F5</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="register-county">縣市</label>
+                    <select name="county" id="register-county">
+                        <option value="">選擇縣市</option>
+                        <option value="tp">台北</option>
+                        <option value="台中">台中</option>
+                        <option>高雄</option>
+                        <option value="">高雄2</option>
+                    </select>
+                </div>
+
+                <div class="form-item">
+                    <label for="register-county-m">縣市</label>
+                    <select name="countys[]" id="register-county-m" multiple>
+                        <option value="">選擇縣市</option>
+                        <option value="tp">台北</option>
+                        <option value="台中">台中</option>
+                        <option>高雄</option>
+                        <option value="">高雄2</option>
+                    </select>
+                </div>
+                <style>
+                    #register-remark {
+                        height: 200px;
+                        padding: 10px;
+                        resize: none;
+                    }
+                </style>
+                <div class="form-item">
+                    <label for="register-remark" class="form-label">有甚麼想法嗎?</label>
+                    <textarea name="remark" id="register-remark" placeholder="請輸入想法"></textarea>
+                </div>
+
+                <div class="form-item">
+                    <label for="register-pic">個人照</label>
+                    <input type="file" id="register-pic" name="pic" accept="image/*">
+                </div>
+                <div class="form-fn">
+                    <label for="tab-switch" class="form-btn">登入</label>
+                    <button class="form-btn">註冊</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    const sayHi = () => {
+        alert('你好啊!!!');
+    }
+</script>
+
+</html>

@@ -1,0 +1,78 @@
+.slogan {
+    display: flex;
+    height: 60px;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    background: rgb(32, 72, 202);
+    color: #fff;
+}
+
+.accrodion .item {
+    margin-bottom: 10px;
+}
+
+.accrodion .item:last-child {
+    margin-bottom: 0;
+}
+
+.accrodion .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background: #7B708F;
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.accrodion .item-header::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background: #0084ff;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.accrodion .item-header:hover::after {
+    display: inline-flex;
+}
+
+.accrodion .item-body {
+    padding: 20px;
+    border: 1px solid #7B708F;
+}
+
+.accrodion .on-open {
+    display: none;
+}
+
+.accrodion .item-body {
+    display: none;
+}
+
+.accrodion .item-switch:checked~.item-header {
+    background: #0084ff;
+}
+
+.accrodion .item-switch:checked~.item-body {
+    display: block;
+}
+
+.accrodion .item-switch:checked~.item-header .on-open {
+    display: block;
+}
+
+.accrodion .item-switch:checked~.item-header .on-close {
+    display: none;
+}
+
+.item-switch {
+    display: none;
+}

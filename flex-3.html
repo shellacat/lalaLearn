@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex justify-content</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .flex {
+            display: flex;
+            background: yellow;
+            width: 100%;
+            margin: 20px auto;
+            height: 300px;
+            gap: 10px;
+            justify-content: flex-start;
+        }
+
+        .flex-item.red {
+            background: red;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex.f-center {
+            justify-content: center;
+        }
+
+        .flex.f-end {
+            justify-content: flex-end;
+        }
+
+        .flex.f-around {
+            justify-content: space-around;
+        }
+
+        .flex.f-between {
+            justify-content: space-between;
+        }
+
+        .flex.f-evenly {
+            justify-content: space-evenly;
+        }
+
+        .flex.f-between.f-sp {
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>flex-start</h1>
+        <div class="flex">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+        <h1>center</h1>
+        <div class="flex f-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>flex-end</h1>
+        <div class="flex f-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>space-around</h1>
+        <div class="flex f-around">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>space-between</h1>
+        <div class="flex f-between">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>space-evenly</h1>
+        <div class="flex f-evenly">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>space-between like space-around</h1>
+        <div class="flex f-between f-sp">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+    </div>
+</body>
+
+</html>

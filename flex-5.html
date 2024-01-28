@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex flex-direction</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .flex {
+            display: flex;
+            background: yellow;
+            width: 100%;
+            margin: 20px auto;
+            height: 300px;
+            gap: 10px;
+            flex-direction: row;
+        }
+
+        .flex-item.red {
+            background: red;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex.row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .flex.f-end {
+            justify-content: flex-end;
+        }
+
+        .flex.column {
+            flex-direction: column;
+        }
+
+        .flex.column-reverse {
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>row-reverse</h1>
+        <div class="flex row-reverse">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+        <h1>justify-content: flex-end</h1>
+        <div class="flex f-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>column</h1>
+        <div class="flex column">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+
+        <h1>column-reverse</h1>
+        <div class="flex column-reverse">
+            <div class="flex-item">1</div>
+            <div class="flex-item" style="background: green">2</div>
+            <div class="flex-item red">3</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .align-item {
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            background: #ffdbb2;
+            display: block;
+            text-align: center;
+            line-height: 300px;
+            color: red;
+        }
+
+        .align-item-flex {
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            background: #dedede;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="align-item">
+            <div>
+                <p>我應該在區塊正中央</p>
+                <!-- <p>我應該在區塊正中央</p> -->
+            </div>
+        </div>
+        <div class="align-item-flex">
+            <div>
+                <p>我應該在區塊正中央</p>
+                <p>我應該在區塊正中央</p>
+            </div>
+        </div>
+        <div class="align-item-flex">
+            <div>
+                <p>我應該在區塊正中央1</p>
+                <p>我應該在區塊正中央1</p>
+            </div>
+            <div>
+                <p>我應該在區塊正中央2</p>
+                <p>我應該在區塊正中央2</p>
+            </div>
+        </div>
+        <div>
+            123
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+}
+
+.clock .wrap {
+    width: 300px;
+    height: 300px;
+    border-radius: 3000px;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.clock .wrap .dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 300px;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+}
+
+.clock .wrap .hours {
+    position: absolute;
+    width: 5px;
+    height: calc(50% - 80px);
+    background: #fa2121;
+    top: 80px;
+    z-index: 4;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    animation-name: rr;
+    animation-iteration-count: infinite;
+    animation-duration: 864s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    border-radius: 1000px;
+}
+
+.clock .wrap .miunte {
+    position: absolute;
+    width: 5px;
+    height: calc(50% - 60px);
+    background: #169abb;
+    top: 60px;
+    z-index: 3;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    animation-name: rr;
+    animation-iteration-count: infinite;
+    animation-duration: 36s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    border-radius: 1000px;
+}
+
+.clock .wrap .second {
+    position: absolute;
+    width: 5px;
+    height: calc(50% - 30px);
+    background: #dfdc2c;
+    top: 30px;
+    z-index: 2;
+    transform: rotate(0deg);
+    transform-origin: bottom;
+    animation-name: rr;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    border-radius: 1000px;
+}
+
+.clock .wrap .num {
+    position: absolute;
+    color: #ffffff;
+    z-index: 1;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.clock .wrap .num.num-01 {
+    transform: rotate(30deg);
+}
+
+.clock .wrap .num.num-02 {
+    transform: rotate(60deg);
+}
+
+.clock .wrap .num.num-03 {
+    transform: rotate(90deg);
+}
+
+.clock .wrap .num.num-04 {
+    transform: rotate(120deg);
+}
+
+.clock .wrap .num.num-05 {
+    transform: rotate(150deg);
+}
+
+.clock .wrap .num.num-06 {
+    transform: rotate(180deg);
+}
+
+.clock .wrap .num.num-07 {
+    transform: rotate(210deg);
+}
+
+.clock .wrap .num.num-08 {
+    transform: rotate(240deg);
+}
+
+.clock .wrap .num.num-09 {
+    transform: rotate(270deg);
+}
+
+.clock .wrap .num.num-10 {
+    transform: rotate(300deg);
+}
+
+.clock .wrap .num.num-11 {
+    transform: rotate(330deg);
+}
+
+@keyframes rr {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
