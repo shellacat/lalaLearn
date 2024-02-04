@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .f2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: yellow;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /* transition: 3s; */
+            transition-duration: 4s;
+            /* 1000ms */
+            transition-property: width;
+
+            transition-timing-function: linear;
+            /* 均速 */
+
+            /* transition-timing-function: ease; */
+            /* 緩入，中間快，緩出，預設值 */
+
+            /* transition-timing-function: ease-in; */
+            /* 緩入 */
+
+            /* transition-timing-function: ease-out; */
+            /* 緩出 */
+
+            /* transition-timing-function: ease-in-out; */
+            /* 緩入緩出 */
+
+            /* transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+            /* 貝茲曲線 */
+            /* transition-delay: 1s; */
+            /* display: none; */
+            /* opacity: 0; */
+        }
+
+        .f2.active {
+            /* display: block; */
+            /* opacity: 1; */
+            background: blue;
+            width: 300px;
+        }
+
+        #toggle {
+            border: 0;
+            background: #282bc7;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 示範淡出淡入效果 -->
+        <div class="f2">I'm f2</div>
+        <button id="toggle">toggle</button>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector('#toggle');
+    let dom = document.querySelector('.f2')
+
+    btn.addEventListener('click', () => {
+        if (dom.classList.contains('active')) {
+            dom.classList.remove('active');
+        } else {
+            dom.classList.add('active');
+        }
+    })
+</script>
+
+</html>

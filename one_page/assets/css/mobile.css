@@ -1,0 +1,109 @@
+.mobile-menu-switch {
+    display: none;
+}
+#mobile-checkbox{
+    display: none;
+}
+@media screen and (max-width:900px){
+    .header .menu-wrap{
+        /* display: none; */
+        position: fixed;
+        top: -100%;
+        /* 再有display的情況下,會影響動畫無法呈現,所以要用其他方式取代display */
+    }
+    .mobile-menu-switch{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .mobile-menu-switch>span{
+        display: inline-flex;
+        width: 30px;
+        height: 5px;
+        background-color: black;
+        border-radius: 100px;
+        transition: 0.4s;
+    }
+    .mobile-menu-switch:hover>span{
+        background-color: rgb(202, 15, 202);
+    }
+
+    #mobile-checkbox:checked+.wrap .mobile-menu-switch>span{
+        background-color: red;
+        position: relative;
+        top: 10px;
+    }
+    #mobile-checkbox:checked+.wrap .mobile-menu-switch>span:nth-child(1) {
+        transform: rotate(45deg);
+
+    }
+    #mobile-checkbox:checked+.wrap .mobile-menu-switch>span:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-checkbox:checked+.wrap .mobile-menu-switch>span:nth-child(3) {
+        transform: rotate(-45deg);
+        position:relative;
+        top: -10px;
+    }
+
+    #mobile-checkbox:checked+.wrap .menu-wrap{
+        display: block;
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        top: 80px;
+        left: 0;
+        border-radius:  0 0 10px 10px;
+        transition: 0.5s;
+    }
+
+    #mobile-checkbox:checked+.wrap{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    #mobile-checkbox:checked+.wrap .menu-wrap .menu{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    #join-form .wrap {
+        flex-direction: column;
+    }
+
+    #join-form .wrap>div {
+        width: 100%;
+    }
+
+    #join-form .wrap>div:first-child::after {
+        top: unset;
+        right: unset;
+        bottom: 0;
+        left: 20px;
+        height: 0;
+        width: calc(100% - 40px);
+    }
+}
+@media screen and (max-width: 700px) {
+    .flow .item:nth-child(even) .tip {
+        right: unset;
+        left: 70px;
+    }
+
+    .flow .item {
+        justify-content: flex-start;
+        padding-left: 20px;
+        margin-bottom: 85px;
+    }
+
+    .flow .item .tip {
+        left: 70px;
+    }
+
+    .flow::after {
+        left: 33px;
+    }
+}

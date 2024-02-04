@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student score print.</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .student-table-wrap {
+            padding: 15px;
+        }
+
+
+        .slogan {
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .fn-wrap {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        #print-btn {
+            border: 0;
+            background: rgb(255, 51, 51);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .table table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .table table th,
+        .table table td {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+
+        .table table th {
+            background: rgb(100, 146, 245);
+            color: #fff;
+        }
+
+        .table table tbody tr:nth-child(even) td {
+            background: #dedede;
+        }
+
+        @media print{
+         .fn-wrap{
+            display: none;
+         }   
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="student-table-wrap">
+            <h1 class="slogan">學生成績表</h1>
+            <div class="fn-wrap">
+                <button id="print-btn">列印</button>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>分數</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>小屁喵-1</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>小屁喵-2</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>小屁喵-3</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>小屁喵-4</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let printBtn = document.querySelector('#print-btn');
+    printBtn.addEventListener('click', () => {
+        window.print();
+        // alert('已列印')
+    })
+
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ball_動畫</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .wrap {
+            margin: 20px;
+            border: 1px solid #5a5a5a;
+            min-height: 500px;
+            padding: 50px;
+            position: relative;
+        }
+
+        .ball {
+            width: 80px;
+            height: 80px;
+            background: blue;
+            border-radius: 900px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        .ball.run {
+            animation-name: ball-run;
+            animation-duration: 3s;
+            top: 20px;
+            left: 700px;
+            background-color: yellow;
+        }
+
+        .mark {
+            position: absolute;
+            z-index: 1;
+            width: 20px;
+            height: 20px;
+            background-color: #5a5a5a;
+        }
+
+        .mark.mark-1 {
+            top: 40px;
+            left: 40px;
+            background-color: blue;
+        }
+
+        .mark.mark-2 {
+            top: 400px;
+            left: 500px;
+            background-color: red;
+        }
+
+        .mark.mark-3 {
+            top: 40px;
+            left: 730px;
+            background-color: yellow;
+        }
+
+        .btn {
+            border: 0;
+            padding: 10px 20px;
+            background: red;
+            color: #fff;
+            margin-left: 400px;
+
+        }
+
+        @keyframes ball-run {
+            0% {
+                top: 10px;
+                left: 10px;
+            }
+
+            50% {
+                top: 370px;
+                left: 470px;
+                background-color: red;
+            }
+
+            100% {
+                top: 20px;
+                left: 700px;
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="ball"></div>
+            <div class="mark mark-1"></div>
+            <div class="mark mark-2"></div>
+            <div class="mark mark-3"></div>
+        </div>
+
+        <div>
+            <button class="btn" onclick="run()">Start Run!</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    function run() {
+        let ball=document.querySelector('.ball')
+        if(ball.classList.contains('run')){
+            ball.classList.remove('run')
+        }else{
+            ball.classList.add('run')
+
+        }
+    }
+</script>
+
+</html>

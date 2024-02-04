@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hammer_斧頭擺動動畫</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <style>
+        .wrap {
+            width: 500px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #000;
+        }
+
+        .hammer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 40px;
+            transform: rotate(120deg);
+            animation-name: run;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate; 
+            /*來回擺動 */
+            animation-timing-function: linear;
+            /*均速 */
+        }
+
+        .hammer .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: #f80f0f;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hammer .line {
+            position: absolute;
+            top: 30px;
+            height: 200px;
+            width: 10px;
+            background: #ffc711;
+        }
+
+        .hammer .cube {
+            position: absolute;
+            top: 230px;
+            width: 180px;
+            height: 70px;
+            background-color: rgb(30, 221, 255);
+            border-bottom-left-radius: 800px;
+            border-bottom-right-radius: 800px;
+        }
+
+        @keyframes run {
+            0% {
+                transform: rotate(60deg);
+            }
+
+            /* 20% {
+                transform: rotate(60deg);
+            }
+
+            80% {
+                transform: rotate(-60deg);
+            } */
+
+            100% {
+                transform: rotate(-60deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="hammer">
+                <div class="circle"></div>
+                <div class="line"></div>
+                <div class="cube"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
