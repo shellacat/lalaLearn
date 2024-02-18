@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Plugin Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .swiper {
+            width: 100%;
+            height: 600px;
+        }
+        .swiper-slide img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="../assets/images/cat.jpg" alt="...">
+            </div>
+            <div class="swiper-slide">
+                <img src="../assets/images/dog.jpg" alt="...">
+            </div>
+            <div class="swiper-slide">
+                <img src="../assets/images/cat.jpg" alt="...">
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
+        //循環
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            //分頁鈕點擊切換
+            clickable: true,
+
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        //自動撥放
+        autoplay: {
+            delay:1500,
+            disableOnInteraction: false,
+        }
+    });
+</script>
+
+</html>
