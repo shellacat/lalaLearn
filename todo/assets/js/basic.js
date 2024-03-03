@@ -5,6 +5,15 @@ let dom = {
     data: document.querySelector('#todo-data')
 };
 
+// todo 資料結構
+let todo_data = [];
+
+// 項目資料結構
+// let todo_obj = {
+//     name: '',
+//     active: '',
+// };
+
 /**
  * 1. 按鈕事件綁定
  * 2. 當按下按鈕時，抓取輸入框文字
@@ -23,12 +32,21 @@ let dom = {
  * @returns {void}
  */
 const insertTodo = (text) => {
+    // 對應 data-index 方便後續取得該項目的 index 索引
+    let index = todo_data.length;
+
     // 因為 appendChild 只接受 Node 物件，所以需要建立 Node 物件後再附加資料
     let li = document.createElement('li');
     li.classList.add('todo-item');
-    li.innerHTML = `<span class="todo-checkbox"></span>
+    li.innerHTML = `<span class="todo-checkbox" data-index="${index}"></span>
                     <span>${text}</span>`;
     dom.data.appendChild(li);
+    todo_data.push({
+        name: text,
+        active: false
+    })
+
+    console.log(todo_data);
 }
 
 /**
@@ -85,6 +103,9 @@ const bindCheckboxOnClick = () => {
     dom.data.addEventListener('click', (e) => {
         let target = e.target;
         if (target && target.classList.contains('todo-checkbox')) {
+            // 更新 todo_data 項目狀態
+            let index = target.dataset.index;
+            let active = false;
             let li = target.parentNode;
             if (target.classList.contains('active')) {
                 target.classList.remove('active');
@@ -92,7 +113,10 @@ const bindCheckboxOnClick = () => {
             } else {
                 target.classList.add('active');
                 li.classList.add('checked');
+                active = true;
             }
+            todo_data[index].active = active;
+            console.log(todo_data);
         }
     })
 }
