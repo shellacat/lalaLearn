@@ -13,6 +13,17 @@ body {
     font-family: "Noto Sans TC", sans-serif;
 }
 
+.header {
+    margin: 10px auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header img {
+    max-width: 60px;
+}
+
 .input-wrap {
     margin: 10px auto;
 }
@@ -109,6 +120,17 @@ body {
     align-items: center;
     gap: 20px;
     cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.todo-item.checked {
+    background: var(--bg-danger);
+    color: var(--color-danger);
+}
+
+.todo-item.checked:hover {
+    background: var(--bg-danger-hover);
 }
 
 .todo-item:hover {
