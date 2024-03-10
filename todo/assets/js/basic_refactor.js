@@ -77,7 +77,7 @@ let todo_app = {
                 active = true;
             }
             todo_app.data[index].active = active;
-            todo_app.write();
+            // todo_app.write();
         }
     },
     /**
