@@ -65,6 +65,35 @@ const doFetchPost = async () => {
     console.log(data.code);
 }
 
+const doUploadFile = async (file) => {
+    if (!file) {
+        return;
+    }
+
+    let api = 'https://book.niceinfos.com/frontend/api/';
+
+    let form = new FormData();
+    form.append('action', 'upload');
+    form.append('file', file);
+
+    let options = {
+        method: 'POST',
+        body: form
+    };
+
+    let response = await fetch(api, options);
+    let data = await response.text();
+    console.log(data);
+}
+
+let elFile = document.querySelector('#upload-file');
+let elBtn = document.querySelector('#updload-btn');
+
+elBtn.addEventListener('click', () => {
+    let file = elFile.files[0];
+    doUploadFile(file);
+})
+
 // doFetch2();
 // doGet();
 
