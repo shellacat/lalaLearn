@@ -18,4 +18,29 @@ const doGet = () => {
     console.log('doGet run.');
 }
 
-doGet();
+const doFetch = () => {
+    let api = 'https://book.niceinfos.com/frontend/api/?action=sleep';
+
+    fetch(api)
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+        })
+
+    console.log('doFetch run.');
+}
+
+const doFetch2 = async () => {
+    let api = 'https://book.niceinfos.com/frontend/api/?action=sleep';
+
+    let response = await fetch(api);
+    let data = await response.text();
+
+    console.log(data);
+    console.log('doFetch2 run.');
+}
+
+doFetch2();
+// doGet();
