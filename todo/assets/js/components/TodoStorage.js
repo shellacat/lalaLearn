@@ -12,7 +12,7 @@ class TodoStorage {
     }
 
     read() {
-        return storage.read();
+        return storage.read([]);
     }
 }
 
