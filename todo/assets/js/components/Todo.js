@@ -8,6 +8,8 @@ let skey = '';
 let storage = '';
 let dom = {};
 // let items = storage.read();
+let items = [];
+
 
 // TODO: 登出功能
 
@@ -53,7 +55,6 @@ class Todo {
         dom = {
             text: document.querySelector('#data-text'),
             btn: document.querySelector('#add-btn'),
-            // container: document.querySelector('#todo-data')
             container: document.querySelector('#todo-data'),
             change_btn: document.querySelector('#todo-change-user')
         };
