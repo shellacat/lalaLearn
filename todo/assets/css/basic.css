@@ -16,8 +16,15 @@ body {
 .header {
     margin: 10px auto;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
     gap: 20px;
     align-items: center;
+
 }
 
 .header img {
@@ -187,4 +194,17 @@ body {
     #todo-data {
         grid-template-columns: 1fr;
     }
+}
+
+.header {
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+.header-fn {
+    width: 100%;
+}
+
+.header-fn .btn {
+    width: 100%;
 }
