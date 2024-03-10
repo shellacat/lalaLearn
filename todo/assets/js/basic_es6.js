@@ -1,4 +1,6 @@
 import { Todo } from './components/Todo.js';
+import { Reader } from '/assets/js/components/Reader.js';
+
 
 const app = new Todo();
 
@@ -88,9 +90,21 @@ const doUploadFile = async (file) => {
 
 let elFile = document.querySelector('#upload-file');
 let elBtn = document.querySelector('#updload-btn');
+let elPreview = document.querySelector('#pic-preview');
 
-elBtn.addEventListener('click', () => {
+
+elBtn.addEventListener('click', async () => {
     let file = elFile.files[0];
+    if (!file) {
+        return;
+    }
+
+    // 前端及時預覽
+    let info = await Reader.file(file);
+    elPreview.src = info.result;
+    return;
+
+
     doUploadFile(file);
 })
 
