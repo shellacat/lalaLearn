@@ -1,11 +1,35 @@
 import { TodoStorage } from "./TodoStorage.js";
+import { TodoUser } from "./TodoUser.js";
 
-let storage = new TodoStorage('todo-app');
+let uid = TodoUser.read();
+let skey = `${uid}-todo-app`;
+let storage = new TodoStorage(skey);
 let dom = {};
 let items = storage.read();
 
+// TODO: 登出功能
+
 class Todo {
     constructor() {
+        this.init();
+    }
+
+    /**
+     * 初始化因為 constructor 無法指定 async
+     */
+    async init() {
+        while (!uid) {
+            let response = await Swal.fire({
+                title: '輸入帳號',
+                html: '請輸入帳號',
+                input: 'text'
+            });
+            if (response.value) {
+                uid = response.value;
+                TodoUser.write(uid);
+            }
+        }
+
         this.initDom();
         this.initEvent();
         this.restoreUI();
