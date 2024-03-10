@@ -1,0 +1,17 @@
+.header {
+    text-align: center;
+    background: #1f35b3;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px auto;
+}
+
+.form-select {
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    outline: none;
+    border: 1px solid #dedede;
+}
