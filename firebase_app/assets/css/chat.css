@@ -84,6 +84,8 @@
     padding: 5px;
     border-radius: var(--radius);
     margin: 10px 0;
+    display: flex;
+    align-items: center;
 }
 
 .content-wrap>div>span {
@@ -95,10 +97,22 @@
 
 .content-wrap .sender {
     text-align: right;
+    justify-content: flex-end;
+}
+
+.content-wrap .receiver {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 .content-wrap .receiver>span {
     background: #186bc9;
+}
+
+.content-wrap .timestamp {
+    background: transparent !important;
+    color: #353535;
+    font-size: 0.8rem;
 }
 
 .send-wrap {
