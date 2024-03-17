@@ -23,11 +23,26 @@ class Register {
         }
 
         let user = await auth.register(email, pwd);
+        // if (user) {
+        //     alert('註冊成功');
+        // } else {
+        //     alert('註冊失敗');
+        // }
         if (user) {
-            alert('註冊成功');
+            await Swal.fire({
+                title: '註冊成功',
+                html: `登入信箱:${user.email}`,
+                icon: 'success'
+            })
         } else {
             alert('註冊失敗');
+            Swal.fire({
+                title: '註冊失敗',
+                html: '請確認信箱是否已註冊',
+                icon: 'error'
+            })
         }
+
     }
 }
 

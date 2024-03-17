@@ -26,6 +26,7 @@ toRegisterBtn.addEventListener('click', () => {
 })
 
 auth.onChange((user) => {
+    // TODO: 註冊或登入成功時，需先顯示訊息再轉跳
     location.href = 'chat.html';
 }, () => {
     loginWrap.classList.add('on');

@@ -1,10 +1,11 @@
 let database = '';
+let auth = '';
 let messageWrap = '';
 let sendText = '';
 let sendBtn = '';
 
 class Chat {
-    constructor(user, realtimeDabase) {
+    constructor(user, realtimeDabase, firebaseAuth) {
         database = realtimeDabase;
         console.log(user.uid);
         this.initDom(user);
@@ -31,6 +32,17 @@ class Chat {
             if (e.key == 'Enter') {
                 sendBtn.click();
             }
+        })
+        
+        let signoutBtn = document.querySelector('#signout-btn');
+        signoutBtn.addEventListener('click', async () => {
+            await Swal.fire({
+                title: '登出完成',
+                html: '您已登出',
+                icon: 'success'
+            });
+            auth.signOut();
+
         })
     }
 

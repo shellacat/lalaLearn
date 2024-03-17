@@ -22,9 +22,16 @@
             <div data-role="A">A</div>
             <div data-role="B">B</div>
         </div>
-        <div class="current-role" id="current-role">
+        <!-- <div class="current-role" id="current-role">
             您現在的角色是: <span id="role-name">unknow</span>
-        </div>
+        </div> -->
+        <div class="text-between">
+            <div class="current-role on" id="current-role">
+                您現在的角色是: <span id="role-name"></span>
+            </div>
+            <div>
+                <button class="button danger" id="signout-btn">登出</button>
+            </div>
 
         <div class="message-wrap" id="message-wrap">
             <div class="content-wrap">
@@ -48,6 +55,8 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script type="module" src="assets/js/chat.js"></script>
 <!-- type="module" 用於模組化開發 -->
 

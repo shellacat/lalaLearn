@@ -18,16 +18,28 @@ class SignIn {
 
     doSignIn = async (email, pwd) => {
         if (!email || !pwd) {
-            alert('信箱密碼未輸入');
+            Swal.fire({
+                title: '登入錯誤',
+                html: '信箱密碼未輸入',
+                icon: 'error'
+            })
             return;
         }
 
         let user = await auth.signIn(email, pwd);
         if (user) {
-            alert('登入成功');
-        } else {
-            alert('登入失敗');
-        }
+            await Swal.fire({
+                title: '登入成功',
+                html: `登入信箱:${user.email}`,
+                icon: 'success'
+            })
+            } else {
+                Swal.fire({
+                    title: '登入失敗',
+                    html: '請確認信箱與密碼',
+                    icon: 'error'
+                })
+            }
     }
 }
 

@@ -5,6 +5,36 @@
     --radius: 4px;
 }
 
+.text-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 8px 15px;
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+    background: #818181;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #6d6d6d;
+}
+
+.button.danger {
+    background: #e9341c;
+}
+
+.button.danger:hover {
+    background: #b82815;
+}
+
+
 .header {
     margin: 20px auto;
     background: var(--bg);
