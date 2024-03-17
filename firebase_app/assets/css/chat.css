@@ -1,0 +1,135 @@
+:root {
+    --bg: #5c5c5c;
+    --bg-hover: #ff5a5a;
+    --color: #ffffff;
+    --radius: 4px;
+}
+
+.header {
+    margin: 20px auto;
+    background: var(--bg);
+    color: var(--color);
+    border-radius: var(--radius);
+    padding: 20px 10px;
+}
+
+.role-choice {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+.role-choice.off {
+    display: none;
+}
+
+.role-choice>div {
+    height: 300px;
+    display: flex;
+    background: var(--bg);
+    color: var(--color);
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.role-choice>div:hover {
+    background: var(--bg-hover);
+}
+
+.current-role {
+    padding: 10px 20px;
+    position: relative;
+    display: none;
+}
+
+.current-role.on {
+    display: block;
+}
+
+.current-role::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 5px;
+    height: 90%;
+    background: #1a9bbb;
+}
+
+.message-wrap {
+    margin: 20px auto;
+    display: none;
+}
+
+.message-wrap.on {
+    display: block;
+}
+
+.content-wrap {
+    border: 2px solid #dedede;
+    border-radius: var(--radius);
+    height: 300px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    padding: 10px 15px;
+}
+
+.content-wrap>div {
+    padding: 5px;
+    border-radius: var(--radius);
+    margin: 10px 0;
+}
+
+.content-wrap>div>span {
+    background: #13a574;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: var(--radius);
+}
+
+.content-wrap .sender {
+    text-align: right;
+}
+
+.content-wrap .receiver>span {
+    background: #186bc9;
+}
+
+.send-wrap {
+    border: 2px solid #dedede;
+    border-radius: var(--radius);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.send-wrap>input {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0 15px;
+    font-size: 1.8rem;
+}
+
+.send-wrap>button {
+    width: 80px;
+    height: 100%;
+    border: 0;
+    background: var(--bg);
+    color: var(--color);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-wrap>button>span {
+    font-size: 2.4rem;
+}

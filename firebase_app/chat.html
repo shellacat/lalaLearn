@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Chat App</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                Firebase Chat App
+            </div>
+        </div>
+        <div class="role-choice" id="role-choice">
+            <div data-role="A">A</div>
+            <div data-role="B">B</div>
+        </div>
+        <div class="current-role" id="current-role">
+            您現在的角色是: <span id="role-name">unknow</span>
+        </div>
+
+        <div class="message-wrap" id="message-wrap">
+            <div class="content-wrap">
+                <!-- <div class="receiver">
+                    <span>Hello</span>
+                </div>
+                <div class="sender">
+                    <span>Hello</span>
+                </div> -->
+            </div>
+            <div class="send-wrap">
+                <input type="text" id="send-text">
+                <button id="send-btn">
+                    <span class="material-symbols-outlined">
+                        send
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="assets/js/chat.js"></script>
+
+</html>
