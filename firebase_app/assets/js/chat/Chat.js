@@ -7,6 +7,7 @@ let sendBtn = '';
 class Chat {
     constructor(user, realtimeDabase, firebaseAuth) {
         database = realtimeDabase;
+        auth = firebaseAuth;
         console.log(user.uid);
         this.initDom(user);
         this.setCurrentRole(user);
@@ -33,7 +34,7 @@ class Chat {
                 sendBtn.click();
             }
         })
-        
+
         let signoutBtn = document.querySelector('#signout-btn');
         signoutBtn.addEventListener('click', async () => {
             await Swal.fire({

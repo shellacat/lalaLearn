@@ -1,6 +1,7 @@
 import { App } from './Firebase/App.js';
 import { Database } from './Firebase/Database.js';
 import { Auth } from './Firebase/Auth.js';
+import { Chat } from './chat/Chat.js'
 
 let app = await App.init();
 let database = new Database(app);

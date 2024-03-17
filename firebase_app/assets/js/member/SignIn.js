@@ -33,13 +33,13 @@ class SignIn {
                 html: `登入信箱:${user.email}`,
                 icon: 'success'
             })
-            } else {
-                Swal.fire({
-                    title: '登入失敗',
-                    html: '請確認信箱與密碼',
-                    icon: 'error'
-                })
-            }
+        } else {
+            Swal.fire({
+                title: '登入失敗',
+                html: '請確認信箱與密碼',
+                icon: 'error'
+            })
+        }
     }
 }
 
