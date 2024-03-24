@@ -181,8 +181,69 @@
                     </template>
                  </li>
                 <li :class="{active: active == 3}">
-                    <a href="#">Content 4</a>
-                </li>
+                    <div class="partner-top-fn">
+                        <div>
+                            <div class="switch-component-wrap">
+                                <span>總開關</span>
+                                <span>
+                                    <span class="switch-component" :class="{active: partner.enable == 'yes'}"
+                                        @click="setEnable('partner_enable')"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <button @click="addPartner">新增夥伴</button>
+                        </div>
+                    </div>
+
+                    <div class="partner-item-wrap">
+                        <template v-for="(item, item_index) in partner.items">
+                            <div class="accrodion-component" :class="{active: item.open}">
+                                <div class="accrodion-name" @click="item.open = !item.open">
+                                    {{ item.name }}</div>
+                                <div class="accrodion-content">
+
+                                    <div class="input-item">
+                                        <label for="">封面</label>
+                                        <div class="image-select"
+                                            :style="{'background-image': `url(${item.cover})`}"
+                                            @click="setImage('partner', item_index, 'cover')">
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <label for="">名稱</label>
+                                        <div>
+                                            <input type="text" class="input-control" placeholder="請輸入名稱"
+                                                v-model="item.name">
+                                        </div>
+                                    </div>
+                                    <div class="input-item">
+                                        <label for="">網址</label>
+                                        <div>
+                                            <input type="text" class="input-control" placeholder="請輸入網址"
+                                                v-model="item.link">
+                                        </div>
+                                    </div>
+                                    <div class="item-enable-wrap two">
+                                        <div>
+                                            <button class="button delete"
+                                                @click="deletePartner(item_index)">刪除</button>
+                                        </div>
+                                        <div>
+                                            <div class="switch-component-wrap">
+                                                <span>顯示</span>
+                                                <span>
+                                                    <span class="switch-component" :class="{active: item.enable}"
+                                                        @click="item.enable = !item.enable"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>                </li>
                 <li :class="{active: active == 4}">
                     <a href="#">Content 5</a>
                 </li>

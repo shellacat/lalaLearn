@@ -115,6 +115,10 @@ const options = {
                         mobile_img: '',
                     }
                 ]
+            },
+            partner: {
+                enable: 'yes',
+                items: [],
             }
         }
     },
@@ -126,6 +130,9 @@ const options = {
             if (type == 'top_banner_enable') {
                 this.top_banner.enable = this.top_banner.enable == 'yes' ? 'no' : 'yes';
             }
+            if (type == 'partner_enable') {
+                this.partner.enable = this.partner.enable == 'yes' ? 'no' : 'yes';
+            }
         },
         async setImage(type, index, field) {
             let images = ['https://fastly.picsum.photos/id/1080/200/200.jpg?hmac=0okKAdyiW9oTgR5PNZQrDYFtWu7HAt93nI93ZpfelUw', 'https://fastly.picsum.photos/id/1035/200/200.jpg?hmac=IDuYUZQ_7a6h4pQU2k7p2nxT-MjMt4uy-p3ze94KtA4']
@@ -135,11 +142,16 @@ const options = {
             if (type == 'video') {
                 this.video.items[index][field] = images[Math.round(Math.random() * 100) % 2];
             }
+            if (type == 'partner') {
+                this.partner.items[index][field] = images[Math.round(Math.random() * 100) % 2];
+            }
         },
         save() {
             let data = {
                 top_banner: this.top_banner,
-                video: this.video            };
+                video: this.video,
+                partner: this.partner,
+                        };
             Storage.write(data);
             Swal.fire({
                 title: '儲存完成',
@@ -157,6 +169,9 @@ const options = {
             if (data.video) {
                 this.video = data.video
             }
+            if (data.partner) {
+                this.partner = data.partner
+            }
         },
         loadYoutubeCover(index) {
             let item = this.video.items[index];
@@ -172,6 +187,18 @@ const options = {
                     this.video.items[index].auto_img = `https://img.youtube.com/vi/${sp[1]}/0.jpg`;
                 }
             })
+        },
+        addPartner() {
+            this.partner.items.push({
+                open: false,
+                enable: true,
+                name: '新夥伴',
+                cover: '',
+                link: '#'
+            });
+        },
+        deletePartner(index) {
+            this.partner.items.splice(index, 1);
         }
     },
     mounted() {
