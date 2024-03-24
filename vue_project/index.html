@@ -91,8 +91,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div>IMAGE</div>
-                                </div>
+                                    <div>
+                                      <div class="top-banner-image">
+                                          <div>
+                                              <div class="input-item">
+                                                  <label for="">桌機板圖片</label>
+                                                  <div class="image-select"
+                                                      :style="{'background-image': `url(${item.desktop_img})`}"
+                                                      @click="setImage('top_banner', item_index, 'desktop_img')">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div>
+                                              <div class="input-item">
+                                                  <label for="">手機板圖片</label>
+                                                  <div class="image-select"
+                                                      :style="{'background-image': `url(${item.mobile_img})`}"
+                                                      @click="setImage('top_banner', item_index, 'mobile_img')">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>                                </div>
                             </div>
                         </div>
                     </template>

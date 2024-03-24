@@ -13,8 +13,7 @@ const options = {
                 enable: 'yes',
                 items: [
                     {
-                        img_link: '',
-                        open: false,
+                        open: true,
                         enable: 'yes',
                         img_link: '1',
                         img_link_target: '_blank',
@@ -56,6 +55,10 @@ const options = {
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
+                        end_date: '',
+                        end_time: '',
+                        desktop_img: '',
+                        mobile_img: '',
                     }
                 ]
             }
@@ -67,11 +70,15 @@ const options = {
         },
         setEnable(type) {
             if (type == 'top_banner_enable') {
-                console.log(this.top_banner.enable)
                 this.top_banner.enable = this.top_banner.enable == 'yes' ? 'no' : 'yes';
-                console.log(this.top_banner.enable)
             }
         },
+        async setImage(type, index, field) {
+            let images = ['https://fastly.picsum.photos/id/1080/200/200.jpg?hmac=0okKAdyiW9oTgR5PNZQrDYFtWu7HAt93nI93ZpfelUw', 'https://fastly.picsum.photos/id/1035/200/200.jpg?hmac=IDuYUZQ_7a6h4pQU2k7p2nxT-MjMt4uy-p3ze94KtA4']
+            if (type == 'top_banner') {
+                this.top_banner.items[index][field] = images[Math.round(Math.random() * 100) % 2];
+            }
+        }
     },
     mounted() {
         console.log('tabs-app is mounted.')
