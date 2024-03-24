@@ -123,8 +123,63 @@
                     <a href="#">Content 2</a>
                 </li>
                 <li :class="{active: active == 2}">
-                    <a href="#">Content 3</a>
-                </li>
+                    <template v-for="(item, item_index) in video.items">
+                        <div class="accrodion-component" :class="{active: item.open}">
+                            <div class="accrodion-name" @click="item.open = !item.open">
+                                影片 {{ item_index + 1 }}</div>
+                            <div class="accrodion-content">
+                                <div class="top-banner-setting">
+                                    <div>
+                                        <div class="input-item">
+                                            <label for="">影片連結</label>
+                                            <div>
+                                                <input type="text" class="input-control" placeholder="請輸入網址"
+                                                    v-model="item.link" @change="loadYoutubeCover(item_index)">
+                                            </div>
+                                        </div>
+                                        <div class="input-item">
+                                            <label for="">影片簡述</label>
+                                            <div>
+                                                <textarea class="input-control" v-model="item.description"
+                                                    placeholder="請輸入影片簡述"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="top-banner-image">
+                                            <div>
+                                                <div class="input-item">
+                                                    <label for="">自動封面</label>
+                                                    <div class="image-select"
+                                                        :style="{'background-image': `url(${item.auto_img})`}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="input-item">
+                                                    <label for="">自訂封面</label>
+                                                    <div class="image-select"
+                                                        :style="{'background-image': `url(${item.custom_img})`}"
+                                                        @click="setImage('video', item_index, 'custom_img')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-enable-wrap">
+                                    <div class="switch-component-wrap">
+                                        <span>自訂封面</span>
+                                        <span>
+                                            <span class="switch-component" :class="{active: item.custom_cover}"
+                                                @click="item.custom_cover = !item.custom_cover"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                 </li>
                 <li :class="{active: active == 3}">
                     <a href="#">Content 4</a>
                 </li>

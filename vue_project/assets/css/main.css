@@ -153,6 +153,12 @@ body {
     font-size: 1.1rem;
 }
 
+textarea.input-control {
+    padding: 15px;
+    height: 122px;
+    resize: none;
+}
+
 .banner-link-setting {
     display: grid;
     grid-template-columns: 2fr 1fr;

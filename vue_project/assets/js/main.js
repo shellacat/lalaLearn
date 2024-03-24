@@ -11,6 +11,58 @@ const options = {
                 '合作夥伴',
                 '相關連結',
             ],
+            video: {
+                items: [
+                    {
+                        open: true,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    },
+                    {
+                        open: false,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    },
+                    {
+                        open: false,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    },
+                    {
+                        open: false,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    },
+                    {
+                        open: false,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    },
+                    {
+                        open: false,
+                        link: '',
+                        description: '',
+                        auto_img: '',
+                        custom_img: '',
+                        custom_cover: false,
+                    }
+                ]
+            },
             top_banner: {
                 enable: 'yes',
                 items: [
@@ -80,11 +132,14 @@ const options = {
             if (type == 'top_banner') {
                 this.top_banner.items[index][field] = images[Math.round(Math.random() * 100) % 2];
             }
+            if (type == 'video') {
+                this.video.items[index][field] = images[Math.round(Math.random() * 100) % 2];
+            }
         },
         save() {
             let data = {
-                top_banner: this.top_banner
-            };
+                top_banner: this.top_banner,
+                video: this.video            };
             Storage.write(data);
             Swal.fire({
                 title: '儲存完成',
@@ -94,9 +149,29 @@ const options = {
         },
         restore() {
             let data = Storage.read();
+
             if (data.top_banner) {
                 this.top_banner = data.top_banner;
             }
+
+            if (data.video) {
+                this.video = data.video
+            }
+        },
+        loadYoutubeCover(index) {
+            let item = this.video.items[index];
+            let url = item.link;
+            let param = url.split('?')[1];
+            if (!param) {
+                return;
+            }
+            let params = param.split('&');
+            params.forEach(str => {
+                let sp = str.split('=');
+                if (sp[0] == 'v') {
+                    this.video.items[index].auto_img = `https://img.youtube.com/vi/${sp[1]}/0.jpg`;
+                }
+            })
         }
     },
     mounted() {
@@ -107,3 +182,7 @@ const options = {
 
 
 Vue.createApp(options).mount('#tabs-app')
+
+// https://img.youtube.com/vi/<insert-youtube-video-id-here>/0.jpg
+// https://img.youtube.com/vi/_WUnfB56IaU/0.jpg
+// https://www.youtube.com/watch?v=_WUnfB56IaU
