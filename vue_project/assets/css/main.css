@@ -1,0 +1,56 @@
+[v-cloak] {
+    display: none;
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.header {
+    background: #5f5f5f;
+    color: #fff;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hd-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tabs-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tabs-name a {
+    display: block;
+    padding: 5px 15px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background: #dedede;
+    transition: 0.3s;
+}
+
+.tabs-name li:hover a,
+.tabs-name li.active a {
+    background: rgb(28, 97, 201);
+    color: #fff;
+}
+
+.tabs-content>li {
+    display: none;
+}
+
+.tabs-content>li.active {
+    display: block;
+}

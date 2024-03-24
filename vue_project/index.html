@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>System Manage</div>
+            <div>
+                <ul class="hd-menu">
+                    <li>
+                        <a href="#">OOO</a>
+                    </li>
+                    <li>
+                        <a href="#">登出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="tabs" id="tabs-app" v-cloak>
+                <ul class="tabs-name">
+                    <template v-for="(item_name, item_index) in items">
+                        <li :class="{active: active == item_index}" @click="setActive(item_index)">
+                            <a href="#">{{ item_name }}</a>
+                        </li>
+                    </template>
+                </ul>
+                <ul class="tabs-content">
+                    <li :class="{active: active == 0}">
+                        <a href="#">Content 1</a>
+                    </li>
+                    <li :class="{active: active == 1}">
+                        <a href="#">Content 2</a>
+                    </li>
+                    <li :class="{active: active == 2}">
+                        <a href="#">Content 3</a>
+                    </li>
+                    <li :class="{active: active == 3}">
+                        <a href="#">Content 4</a>
+                    </li>
+                    <li :class="{active: active == 4}">
+                        <a href="#">Content 5</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/vue.global.prod.js"></script>
+<script type="module" src="assets/js/main.js"></script>
+
+</html>
