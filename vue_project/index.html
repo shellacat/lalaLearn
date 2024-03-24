@@ -39,8 +39,13 @@
                 </ul>
                 <ul class="tabs-content">
                     <li :class="{active: active == 0}">
-                        <a href="#">Content 1</a>
-                    </li>
+                        <div class="switch-component-wrap">
+                            <span>總開關</span>
+                            <span>
+                                <span class="switch-component" :class="{active: top_banner.enable == 'yes'}"
+                                    @click="setEnable('top_banner_enable')"></span>
+                            </span>
+                        </div>                    </li>
                     <li :class="{active: active == 1}">
                         <a href="#">Content 2</a>
                     </li>
