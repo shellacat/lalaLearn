@@ -13,55 +13,106 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <div>System Manage</div>
-            <div>
-                <ul class="hd-menu">
-                    <li>
-                        <a href="#">OOO</a>
-                    </li>
-                    <li>
-                        <a href="#">登出</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="main">
-            <div class="tabs" id="tabs-app" v-cloak>
-                <ul class="tabs-name">
-                    <template v-for="(item_name, item_index) in items">
-                        <li :class="{active: active == item_index}" @click="setActive(item_index)">
-                            <a href="#">{{ item_name }}</a>
-                        </li>
-                    </template>
-                </ul>
-                <ul class="tabs-content">
-                    <li :class="{active: active == 0}">
-                        <div class="switch-component-wrap">
-                            <span>總開關</span>
-                            <span>
-                                <span class="switch-component" :class="{active: top_banner.enable == 'yes'}"
-                                    @click="setEnable('top_banner_enable')"></span>
-                            </span>
-                        </div>                    </li>
-                    <li :class="{active: active == 1}">
-                        <a href="#">Content 2</a>
-                    </li>
-                    <li :class="{active: active == 2}">
-                        <a href="#">Content 3</a>
-                    </li>
-                    <li :class="{active: active == 3}">
-                        <a href="#">Content 4</a>
-                    </li>
-                    <li :class="{active: active == 4}">
-                        <a href="#">Content 5</a>
-                    </li>
-                </ul>
-            </div>
+  <div class="container">
+    <div class="header">
+        <div>System Manage</div>
+        <div>
+            <ul class="hd-menu">
+                <li>
+                    <a href="#">OOO</a>
+                </li>
+                <li>
+                    <a href="#">登出</a>
+                </li>
+            </ul>
         </div>
     </div>
+
+    <div class="main">
+        <div class="tabs" id="tabs-app" v-cloak>
+            <ul class="tabs-name">
+                <template v-for="(item_name, item_index) in items">
+                    <li :class="{active: active == item_index}" @click="setActive(item_index)">
+                        <a href="#">{{ item_name }}</a>
+                    </li>
+                </template>
+            </ul>
+            <ul class="tabs-content">
+                <li :class="{active: active == 0}">
+                    <div class="switch-component-wrap">
+                        <span>總開關</span>
+                        <span>
+                            <span class="switch-component" :class="{active: top_banner.enable == 'yes'}"
+                                @click="setEnable('top_banner_enable')"></span>
+                        </span>
+                    </div>
+                    <template v-for="(item, item_index) in top_banner.items">
+                        <div class="accrodion-component" :class="{active: item.open}">
+                            <div class="accrodion-name" @click="item.open = !item.open">
+                                橫幅輪撥 {{ item_index + 1 }}</div>
+                            <div class="accrodion-content">
+                                <div class="top-banner-setting">
+                                    <div>
+                                        <div class="input-item">
+                                            <label for="">圖片連結</label>
+                                            <div class="banner-link-setting">
+                                                <div>
+                                                    <input type="text" class="input-control" placeholder="請輸入網址"
+                                                        v-model="item.img_link">
+                                                </div>
+                                                <div>
+                                                    <select class="input-control">
+                                                        <option value="_blank">另開新頁</option>
+                                                        <option value="_self">直接轉跳</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-item">
+                                            <label for="">開始時間</label>
+                                            <div class="banner-datetime">
+                                                <div>
+                                                    <input type="date" class="input-control">
+                                                </div>
+                                                <div>
+                                                    <input type="time" class="input-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-item">
+                                            <label for="">結束時間</label>
+                                            <div class="banner-datetime">
+                                                <div>
+                                                    <input type="date" class="input-control">
+                                                </div>
+                                                <div>
+                                                    <input type="time" class="input-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>IMAGE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </li>
+                <li :class="{active: active == 1}">
+                    <a href="#">Content 2</a>
+                </li>
+                <li :class="{active: active == 2}">
+                    <a href="#">Content 3</a>
+                </li>
+                <li :class="{active: active == 3}">
+                    <a href="#">Content 4</a>
+                </li>
+                <li :class="{active: active == 4}">
+                    <a href="#">Content 5</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
 </body>
 <script src="assets/js/vue.global.prod.js"></script>
 <script type="module" src="assets/js/main.js"></script>
