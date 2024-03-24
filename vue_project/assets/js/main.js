@@ -1,3 +1,5 @@
+import { Storage } from "./components/Storage.js";
+
 const options = {
     data() {
         return {
@@ -15,7 +17,7 @@ const options = {
                     {
                         open: true,
                         enable: 'yes',
-                        img_link: '1',
+                        img_link: '',
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
@@ -27,7 +29,7 @@ const options = {
                     {
                         open: false,
                         enable: 'yes',
-                        img_link: '2',
+                        img_link: '',
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
@@ -39,7 +41,7 @@ const options = {
                     {
                         open: false,
                         enable: 'yes',
-                        img_link: '3',
+                        img_link: '',
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
@@ -51,7 +53,7 @@ const options = {
                     {
                         open: false,
                         enable: 'yes',
-                        img_link: '4',
+                        img_link: '',
                         img_link_target: '_blank',
                         start_date: '',
                         start_time: '',
@@ -78,10 +80,28 @@ const options = {
             if (type == 'top_banner') {
                 this.top_banner.items[index][field] = images[Math.round(Math.random() * 100) % 2];
             }
+        },
+        save() {
+            let data = {
+                top_banner: this.top_banner
+            };
+            Storage.write(data);
+            Swal.fire({
+                title: '儲存完成',
+                html: '已經資料儲存至本地端',
+                icon: 'success'
+            })
+        },
+        restore() {
+            let data = Storage.read();
+            if (data.top_banner) {
+                this.top_banner = data.top_banner;
+            }
         }
     },
     mounted() {
         console.log('tabs-app is mounted.')
+        this.restore();
     }
 };
 

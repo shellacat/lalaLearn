@@ -188,3 +188,35 @@ body {
     content: "SELECT";
     color: #9b9b9b;
 }
+
+.item-enable-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tabs-fn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px auto;
+}
+
+.tabs-fn button {
+    padding: 8px 20px;
+    border: 0;
+    border-radius: 4px;
+    background: #17a599;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.tabs-fn button:hover {
+    background: #0f6e66;
+}
+
+@media screen and (max-width:800px) {
+    .top-banner-setting {
+        grid-template-columns: 1fr;
+    }
+}
