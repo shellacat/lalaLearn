@@ -202,7 +202,14 @@
                                 <div class="accrodion-name" @click="item.open = !item.open">
                                     {{ item.name }}</div>
                                 <div class="accrodion-content">
-
+                                    <div class="partner-sort">
+                                        <div>
+                                            <button @click="sortPrevious('partner', item_index)">&lt; 往前</button>
+                                        </div>
+                                        <div>
+                                            <button @click="sortNext('partner', item_index)">往後 &gt;</button>
+                                        </div>
+                                    </div>
                                     <div class="input-item">
                                         <label for="">封面</label>
                                         <div class="image-select"
